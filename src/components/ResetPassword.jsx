@@ -132,7 +132,7 @@ function ResetPassword() {
 
       if (response.data.status === "password-reset-success") {
         setMessage("Password has been reset successfully.");
-        setTimeout(() => navigate("/login"), 3000); // Redirect to login after success
+        setTimeout(() => navigate("/"), 3000); // Redirect to login after success
       } else {
         setMessage("Error resetting password. Please ensure your token is valid and try again.");
       }
