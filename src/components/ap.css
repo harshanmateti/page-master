@@ -19,6 +19,8 @@ body {
     width: 350px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     text-align: center;
+    margin-top: 17vh;
+    margin-left: 80vh;
 }
 
 .form h1 {
@@ -108,7 +110,7 @@ body {
 }
 
 /* Home Page Container */
-.home {
+/* .home {
     background-color: #111;
     border-radius: 12px;
     padding: 40px;
@@ -124,7 +126,7 @@ body {
 }
 
 /* Feature Section */
-.feature {
+/* .feature {
     margin: 20px 0;
 }
 
@@ -132,10 +134,10 @@ body {
     font-size: 18px;
     margin-bottom: 15px;
     color: #ccc;
-}
+}  */
 
 /* Feature Buttons */
-button {
+/* button {
     width: 160px;
     padding: 12px;
     margin: 10px 5px;
@@ -162,16 +164,16 @@ button:active {
 }
 
 /* Special Button Styles for 'On' and 'Off' States */
-button.on {
+/* button.on {
     background-color: #007bff;
 }
 
 button.off {
     background-color: #6c757d;
-}
+}  */
 
 /* Responsive Design for Mobile */
-@media (max-width: 768px) {
+ /* @media (max-width: 768px) {
     .home {
         width: 90%;
         padding: 30px;
@@ -181,4 +183,4 @@ button.off {
         width: 100%;
         margin: 10px 0;
     }
-}
+}  */
