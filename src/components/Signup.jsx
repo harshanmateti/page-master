@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import PasswordStrengthMeter from "./PasswordStrengthMeter";
 import './ap.css';
 import car from './car.jpg';
 
@@ -49,6 +50,7 @@ function Signup({ setAuthenticated, setUser }) {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
+        <PasswordStrengthMeter password={password} /> {/* Password Strength Meter */}
         <br />
         <br />
         <input type="submit" onClick={submit} />

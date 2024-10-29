@@ -1,4 +1,3 @@
-// Home.jsx
 // import React, { useState } from 'react';
 // import './ap.css';
 
@@ -49,13 +48,20 @@
 // }
 
 // export default Home;
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
 
-function App() {
+function Home() {
+  const [leftIndicator, setLeftIndicator] = useState(false);
+    const [rightIndicator, setRightIndicator] = useState(false);
+    const [airConditioner, setAirConditioner] = useState(false);
+    const [headlights, setHeadlights] = useState(false);
+    // const letfbutton = document.querySelector("#leftButton");
+    
   return (
+    <div id ="items">
     <div className="app-container">
       <header className="header">
         <h1>Smart Vehicle Dashboard</h1>
@@ -93,12 +99,52 @@ function App() {
           <button>Skip</button>
         </div>
       </section>
-
-      <footer className="footer">
+      <section className="section-container indicator-status">
+        <h1>Car Features Control</h1>
+        <div className="feature">
+          <br></br>
+          <h3 style ={{color:'black'}}>Indicator Lights</h3>
+          <button
+            id="leftbutton"
+            onClick={() => setLeftIndicator(!leftIndicator)}
+            style={{
+              backgroundColor: leftIndicator ? 'green' : 'red',color: 'white'}}>
+            Left Indicator {leftIndicator ? 'On' : 'Off'}
+          </button>
+          <button id="rightbutton" onClick={() => setRightIndicator(!rightIndicator)}
+            style={{backgroundColor: rightIndicator ? 'green' : 'red',color: 'white'}}>
+            Right Indicator {rightIndicator ? 'On' : 'Off'}
+          </button>
+        </div>
+        <div className="feature">
+          <br></br>
+          <h3 style ={{color:'black'}}>Air Conditioner</h3>
+          <button onClick={() => setAirConditioner(!airConditioner)}
+            style={{backgroundColor: airConditioner ? 'green' : 'red',color: 'white'}}>
+            AC {airConditioner ? 'On' : 'Off'}
+          </button>
+        </div>
+        <div className="feature">
+          <br></br>
+          <h3 style ={{color:'black'}}>Headlights</h3>
+          <button onClick={() => setHeadlights(!headlights)}
+          style={{backgroundColor: headlights ? 'green' : 'red',color: 'white'}}>
+            Headlights {headlights ? 'On' : 'Off'}
+          </button>
+        </div>
+        </section>
+        <footer className="footer">
         <p>&copy; 2024 Smart Vehicle Dashboard. All rights reserved.</p>
       </footer>
-    </div>
+        </div>
+        </div>
   );
+  // if(leftIndicator=="On")
+  //   {
+  //     leftbutton.style.backgroundColor="green";
+  //   }
 }
 
-export default App;
+
+
+export default Home;

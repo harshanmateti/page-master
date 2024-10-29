@@ -62,9 +62,10 @@ h2 {
   text-align: left;
 }
 
-.music-control .music-buttons {
+.music-control .music-buttons .indicator-status {
   display: flex;
   justify-content: center;
+  color:black;
 }
 
 button {
@@ -87,4 +88,12 @@ button:hover {
   padding: 20px;
   background-color: #333;
   color: white;
+}
+.items{
+  align-items: center;
+  justify-content: center;
+}
+.home{
+  align-items: center;
+  justify-content: center;
 }
