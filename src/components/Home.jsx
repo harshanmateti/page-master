@@ -50,6 +50,7 @@
 // export default Home;
 import React, { useState } from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
 
@@ -66,6 +67,13 @@ function Home() {
       <header className="header">
         <h1>Smart Vehicle Dashboard</h1>
       </header>
+      
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/controls">Controls</Link></li>
+        </ul>
+      </nav>
+
 
       {/* Map Section */}
       <section className="section-container">

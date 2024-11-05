@@ -94,6 +94,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
+import Controls from "./components/controls";
 import Home from "./components/Home";
 // import App from "./components/Home";
 import Login from "./components/Login";
@@ -139,6 +140,7 @@ function App() {
           <Route path="/" element={<Login setAuthenticated={setAuthenticated} setUser={setUser} />} />
           <Route path="/signup" element={<Signup setAuthenticated={setAuthenticated} setUser={setUser} />} />
           <Route path="/home" element={<PrivateRoute><Home user={user} /></PrivateRoute>} />
+          <Route path="/controls" element={<PrivateRoute> <Controls /> </PrivateRoute>} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
         </Routes>
