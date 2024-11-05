@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+//import "./Reset.css"
 
 function ResetPassword() {
   const { token } = useParams(); // Get the reset token from the URL

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import PasswordStrengthMeter from "./PasswordStrengthMeter";
-import './ap.css';
+import './signup.css';
 import car from './car.jpg';
 
 function Signup({ setAuthenticated, setUser }) {
@@ -33,19 +33,19 @@ function Signup({ setAuthenticated, setUser }) {
   }
 
   return (
-    <div className="login">
-      <form action="POST" className="form">
-        <img src={car} alt="Car" style={{ width: '100px', height: 'auto' }} />
-        <h1>Signup</h1>
+    <div className="signup-container">
+      <form action="POST" className="signup-form">
+        <img src={car} alt="Car" className="signup-image" />
+        <h1 className="signup-title">Signup</h1>
         <input
-          className="user"
+          className="signup-input email-input"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
         />
         <br />
         <input
-          className="pass"
+          className="signup-input password-input"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
@@ -53,11 +53,11 @@ function Signup({ setAuthenticated, setUser }) {
         <PasswordStrengthMeter password={password} /> {/* Password Strength Meter */}
         <br />
         <br />
-        <input type="submit" onClick={submit} />
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        <input type="submit" onClick={submit} className="signup-submit" />
+        {error && <div className="signup-error">{error}</div>}
         <br />
         <br />
-        <Link to="/">Login Page</Link>
+        <Link to="/" className="signup-link">Login Page</Link>
       </form>
     </div>
   );

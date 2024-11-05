@@ -97,3 +97,33 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+/* Navbar Styles */
+.navbar {
+  background-color: darkcyan;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}

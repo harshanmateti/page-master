@@ -1,0 +1,87 @@
+/* ForgotPassword.css */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    font-family: Arial, sans-serif;
+}
+  
+  form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="email"]:focus {
+    border-color: #4b79a1;
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background: linear-gradient(135deg, #283e51, #4b79a1);
+    transform: translateY(-2px);
+  }
+  
+  button[type="submit"]:active {
+    transform: translateY(0);
+  }
+  
+  p {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #555;
+  }
+  
+  p.success {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  p.error {
+    color: #d9534f;
+    font-weight: bold;
+  }
+  
