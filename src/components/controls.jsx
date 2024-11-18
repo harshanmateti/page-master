@@ -17,17 +17,16 @@ function Controls() {
           <button
             className="feature-button"
             onClick={() => setLeftIndicator(!leftIndicator)}
-            style={{
-              backgroundColor: leftIndicator ? 'green' : 'red', color: 'white'
-            }}>
+            data-on={leftIndicator}
+          >
             Left Indicator {leftIndicator ? 'On' : 'Off'}
           </button>
+          <br></br>
           <button
             className="feature-button"
             onClick={() => setRightIndicator(!rightIndicator)}
-            style={{
-              backgroundColor: rightIndicator ? 'green' : 'red', color: 'white'
-            }}>
+            data-on={rightIndicator}
+          >
             Right Indicator {rightIndicator ? 'On' : 'Off'}
           </button>
         </div>
@@ -37,9 +36,8 @@ function Controls() {
           <button
             className="feature-button"
             onClick={() => setAirConditioner(!airConditioner)}
-            style={{
-              backgroundColor: airConditioner ? 'green' : 'red', color: 'white'
-            }}>
+            data-on={airConditioner}
+          >
             AC {airConditioner ? 'On' : 'Off'}
           </button>
         </div>
@@ -49,14 +47,13 @@ function Controls() {
           <button
             className="feature-button"
             onClick={() => setHeadlights(!headlights)}
-            style={{
-              backgroundColor: headlights ? 'green' : 'red', color: 'white'
-            }}>
+            data-on={headlights}
+          >
             Headlights {headlights ? 'On' : 'Off'}
           </button>
         </div>
     </section>
-  )
+  );
 }
 
 export default Controls;

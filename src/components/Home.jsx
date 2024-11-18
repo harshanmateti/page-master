@@ -4,60 +4,55 @@ import { Link } from 'react-router-dom';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
 
-function Home() {
-    
+
+const Home = () => {
   return (
-    <div id="items">
-      <div className="app-container">
-        <header className="header">
-          <h1>Smart Vehicle Dashboard</h1>
-        </header>
-        
+    <div className="container">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <ul className="sidebar-icons">
+          <li>
+            <Link to="/home">🏠</Link>
+          </li>
+          <li>
+            <Link to="/controls">🎛️</Link>
+          </li>
+          <li>
+            <Link to="/Detail">🙎🏻‍♂️</Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Main Content */}
+      <div className="main-content">
+        {/* Navbar */}
         <nav className="navbar">
-          <ul>
-            <li><Link to="/controls">Controls</Link></li>
-          </ul>
+          <h1>Smart Vehicle Dashboard</h1>
         </nav>
 
-        {/* Map Section */}
-        <section className="section-container">
-          <h2>Map</h2>
+        {/* Location Block */}
+        <div className="card">
+          <div className="icon">📍</div>
+          <h3>Location Live</h3>
           <MapComponent />
-        </section>
+        </div>
 
-        {/* Weather Section */}
-        <section className="section-container">
-          <h2>Current Weather</h2>
+        {/* Weather Block */}
+        <div className="card">
+          <div className="icon">☀️</div>
+          <h3>Weather</h3>
           <WeatherComponent />
-        </section>
+        </div>
 
-        {/* Car Status Section */}
-        <section className="section-container car-status">
-          <h2>Car Status</h2>
-          <div className="car-details">
-            <p><strong>Speed:</strong> 128 km/h</p>
-            <p><strong>Battery:</strong> 35.5 kWh (Full Capacity)</p>
-            <p><strong>Status:</strong> Driving</p>
-            <img src="https://via.placeholder.com/200" alt="Car" />
-          </div>
-        </section>
-
-        {/* Music Section */}
-        <section className="section-container music-control">
-          <h2>Music Control</h2>
-          <div className="music-buttons">
-            <button>Rewind</button>
-            <button>Play</button>
-            <button>Skip</button>
-          </div>
-        </section>
-
-        <footer className="footer">
-          <p>&copy; 2024 Smart Vehicle Dashboard. All rights reserved.</p>
-        </footer>
+        {/* Music Player Block */}
+        <div className="card">
+          <div className="icon">🎵</div>
+          <h3>Music Player</h3>
+          <p>Play your favorite tunes on the go.</p>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Home;

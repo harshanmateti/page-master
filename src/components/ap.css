@@ -1,109 +1,112 @@
-/* Main container for the login page */
-.login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Login form styling */
-  .form {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 40px 50px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .form:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Login image styling */
-  .form img {
-    margin-bottom: 25px;
-    width: 80px;
-    height: auto;
-    border-radius: 50%;
-    border: 3px solid #fad0c4;
-    padding: 5px;
-  }
-  
-  /* Title styling */
-  .form h1 {
-    color: #333;
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Input field styling */
-  .user, .pass {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.3s ease, border 0.3s ease;
-  }
-  
-  .user:focus, .pass:focus {
-    border-color: #ff9a9e;
-    outline: none;
-    box-shadow: 0 0 8px rgba(255, 154, 158, 0.3);
-  }
-  
-  /* Submit button styling */
-  .form input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .form input[type="submit"]:hover {
-    background: linear-gradient(135deg, #ff7f7f, #fad0c4);
-    transform: translateY(-2px);
-  }
-  
-  /* Link and error styling */
-  .form p {
-    color: #666;
-    margin-top: 20px;
-    font-size: 0.9em;
-  }
-  
-  .form a {
-    color: #ff7f7f;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .form a:hover {
-    color: #ff4d4d;
-    transform: translateY(-2px);
-  }
-  
-  /* Error message styling */
-  .form div {
-    color: #ff4d4d;
-    font-size: 0.9em;
-    margin-top: 10px;
-  }
-  
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body, html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Page Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Login Form */
+.login-form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+/* Login Image */
+.login-image {
+  margin-bottom: 20px;
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #ebedee;
+  padding: 5px;
+}
+
+/* Title Styling */
+.login-title {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.login-email,
+.login-password {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+}
+
+/* Submit Button */
+.login-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #50c9c3, #96deda);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-submit:hover {
+  background: linear-gradient(135deg, #43a6a6, #85d5d5);
+  transform: translateY(-2px);
+}
+
+/* Error Message */
+.login-error {
+  color: #ff6b6b;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* Links */
+.login-text {
+  color: #666;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.login-link {
+  color: #50c9c3;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+.login-link:hover {
+  color: #43a6a6;
+  text-decoration: underline;
+}
