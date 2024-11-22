@@ -3,6 +3,7 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
+import Card from './MusicControl';
 
 
 const Home = () => {
@@ -49,6 +50,7 @@ const Home = () => {
           <div className="icon">🎵</div>
           <h3>Music Player</h3>
           <p>Play your favorite tunes on the go.</p>
+          <Card />
         </div>
       </div>
     </div>

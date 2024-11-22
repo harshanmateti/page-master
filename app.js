@@ -374,20 +374,30 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
+    // Find user in the database
     const user = await collection.findOne({ email });
+
     if (!user) {
-      return res.json({ status: "invalid" });
+      return res.json({ status: "error", message: "User not found" });
     }
+
+    // Validate the password using bcrypt
     const isValid = await bcrypt.compare(password, user.password);
+
     if (isValid) {
-      res.json({ status: "authenticated", user: user.email });
+      res.json({
+        status: "authenticated",
+        user: { email: user.email },
+      });
     } else {
-      res.json({ status: "invalid" });
+      res.json({ status: "error", message: "Invalid credentials" });
     }
-  } catch (e) {
-    res.json({ status: "fail" });
+  } catch (error) {
+    console.error("Error in login:", error);
+    res.json({ status: "error", message: "Something went wrong. Please try again later." });
   }
 });
+
 
 // Endpoint for user signup
 app.post("/signup", async (req, res) => {

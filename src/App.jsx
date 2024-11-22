@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
+import Detail from "./components/Detail";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/signup" element={<Signup setAuthenticated={setAuthenticated} setUser={setUser} />} />
           <Route path="/home" element={<PrivateRoute><Home user={user} /></PrivateRoute>} />
           <Route path="/controls" element={<PrivateRoute> <Controls /> </PrivateRoute>} />
+          <Route path="/Detail" element={<PrivateRoute> <Detail /> </PrivateRoute>} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
         </Routes>
@@ -56,5 +58,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

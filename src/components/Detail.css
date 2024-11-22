@@ -1,0 +1,49 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Center container styling */
+  .detail-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  /* Title styling */
+  .detail-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  /* Paragraph styling */
+  .detail-container p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  /* Emphasize the email */
+  .detail-container p span {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Add hover effect */
+  .detail-container p span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  

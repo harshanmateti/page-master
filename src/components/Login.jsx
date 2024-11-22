@@ -1,15 +1,17 @@
-// Login.jsx
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
-import { useNavigate, Link} from "react-router-dom";
-import './ap.css'; // Updated CSS file name
+import { useNavigate, Link } from "react-router-dom";
+import { UserContext } from "./UserContext"; // Import UserContext
+import './ap.css'; 
 import car from './car.jpg';
 
-function Login({ setAuthenticated, setUser }) {
+function Login({ setAuthenticated }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+
+  const { setUser } = useContext(UserContext); // Access setUser from context
 
   async function submit(e) {
     e.preventDefault();
@@ -20,15 +22,19 @@ function Login({ setAuthenticated, setUser }) {
         password,
       });
 
+      console.log("Response:", response.data); // Debugging response
+
       if (response.data.status === "authenticated") {
         setAuthenticated(true);
-        setUser(response.data.user);
+        setUser({ email: response.data.user.email }); // Store email in context
+        console.log("User set to:", response.data.user.email); // Debugging user context
         navigate("/home");
       } else {
         setError("Invalid email or password");
       }
     } catch (error) {
       setError("Error logging in");
+      console.error("Login error:", error); // Log error
     }
   }
 
@@ -57,7 +63,7 @@ function Login({ setAuthenticated, setUser }) {
         {error && <div className="login-error">{error}</div>}
         <p className="login-text">Don't have an account?</p>
         <Link to="/signup" className="login-link">Register</Link>
-        <br></br>
+        <br />
         <Link to="/forgot-password" className="login-link">Forgot Password?</Link>
       </form>
     </div>
