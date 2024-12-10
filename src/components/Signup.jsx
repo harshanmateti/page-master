@@ -127,7 +127,7 @@ function Signup({ setAuthenticated }) {
         {error && <div className="signup-error">{error}</div>}
         <br />
         <br />
-        <Link to="/" className="signup-link">Login Page</Link>
+        <Link to="/login" className="signup-link">Login Page</Link>
       </form>
     </div>
   );

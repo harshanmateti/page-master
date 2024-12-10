@@ -1,74 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './controls.css';
 
-function Controls() {
+const Esp32 = () => {
+    const handleRelayAction = async (id, action) => {
+        try {
+            const response = await fetch(`http://localhost:8000/relay/${id}/${action}`);
+            const result = await response.text();
+            console.log(result);
+            alert(result); // Show ESP32's response
+        } catch (error) {
+            console.error('Error communicating with the backend:', error);
+        }
+    };
 
-  const [leftIndicator, setLeftIndicator] = useState(false);
-  const [rightIndicator, setRightIndicator] = useState(false);
-  const [airConditioner, setAirConditioner] = useState(false);
-  const [headlights, setHeadlights] = useState(false);
+    return (
+        <div className="esp32-wrapper">
+            <div className="sidebar">
+                <ul className="sidebar-icons">
+                    <li>
+                        <Link to="/home">🏠</Link>
+                    </li>
+                    <li>
+                      <Link to="/controls">🎛️</Link>
+                    </li>
+                    <li>
+                        <Link to="/Detail">🙎🏻‍♂</Link>
+                    </li>
+                    {/* Uncomment this if needed */}
+                    {/* <li>
+                        <Link to="/ESPControl">🎛</Link>
+                    </li> */}
+                </ul>
+            </div>
+            <div className="relay-control">
+                <h1>Relay Control</h1>
+                <button onClick={() => handleRelayAction(1, 'toggle')}>LEFT ON </button>
+                <button onClick={() => handleRelayAction(-1, 'toggle')}>LEFT OFF </button>
+                <button onClick={() => handleRelayAction(2, 'toggle')}>RIGHT ON </button>
+                <button onClick={() => handleRelayAction(-2, 'toggle')}>RIGHT OFF </button>
+                <button onClick={() => handleRelayAction(3, 'toggle')}>HORN ON </button>
+                <button onClick={() => handleRelayAction(-3, 'toggle')}>HORN OFF</button>
+            </div>
+        </div>
+    );
+};
 
-  return (
-
-    <section className="controls-container">
-      <div className="sidebar">
-        <ul className="sidebar-icons">
-          <li>
-            <Link to="/home">🏠</Link>
-          </li>
-          <li>
-            <Link to="/controls">🎛️</Link>
-          </li>
-          <li>
-            <Link to="/Detail">🙎🏻‍♂️</Link>
-          </li>
-        </ul>
-      </div>
-      <h1 className="controls-title">Car Features Control</h1>
-
-      <div className="controls-feature">
-        <h3 className="feature-title">Indicator Lights</h3>
-        <button
-          className="feature-button"
-          onClick={() => setLeftIndicator(!leftIndicator)}
-          data-on={leftIndicator}
-        >
-          Left Indicator {leftIndicator ? 'On' : 'Off'}
-        </button>
-        <br></br>
-        <button
-          className="feature-button"
-          onClick={() => setRightIndicator(!rightIndicator)}
-          data-on={rightIndicator}
-        >
-          Right Indicator {rightIndicator ? 'On' : 'Off'}
-        </button>
-      </div>
-
-      <div className="controls-feature">
-        <h3 className="feature-title">Air Conditioner</h3>
-        <button
-          className="feature-button"
-          onClick={() => setAirConditioner(!airConditioner)}
-          data-on={airConditioner}
-        >
-          AC {airConditioner ? 'On' : 'Off'}
-        </button>
-      </div>
-
-      <div className="controls-feature">
-        <h3 className="feature-title">Headlights</h3>
-        <button
-          className="feature-button"
-          onClick={() => setHeadlights(!headlights)}
-          data-on={headlights}
-        >
-          Headlights {headlights ? 'On' : 'Off'}
-        </button>
-      </div>
-    </section>
-  );
-}
-
-export default Controls;
+export default Esp32;

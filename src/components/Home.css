@@ -1,13 +1,13 @@
 /* General Reset */
-* {
+ /* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
+}  */
 
 /* Body Styling */
-body, html {
+/* body, html {
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #1e90ff, #4b0082);
@@ -15,24 +15,24 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden; /* Prevent scrolling */
-}
+  overflow: hidden; 
+} */
 
 /* Main Container */
-.container {
+ .container-1 {
   display: flex;
   flex-direction: column;
   width: calc(100vw - 80px); /* Adjust for sidebar */
   height: 100vh;
-  margin-left: 80px; /* Leave space for sidebar */
+   margin-left: 80px; /* Leave space for sidebar */
   background-color: #ffffff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
+ } 
 
 /* Navbar Styling */
-.navbar {
+ .navbar { 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@ body, html {
   color: white;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+  }  
 
 .navbar h1 {
   font-size: 2rem;

@@ -8,7 +8,7 @@ import Card from './MusicControl';
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="container-1">
       {/* Sidebar */}
       <div className="sidebar">
         <ul className="sidebar-icons">

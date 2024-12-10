@@ -1,141 +1,55 @@
-/* Main container styling */
-/* .controls-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3);
-    padding: 30px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .controls-title {
-    color: #333;
-    font-size: 2em;
-    margin-bottom: 25px;
-    text-align: center;
-  } */
-  
-  /* Each feature container */
-  /* .controls-feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 15px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  .feature-title {
-    color: #555;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-  } */
-  
-  /* Button styling */
-  /* .feature-button {
-    padding: 10px 25px;
-    font-size: 16px;
-    margin: 8px;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    width: 150px;
-  } */
-  
-  /* Button color variations based on state */
-  /* .feature-button[style*="green"] {
-    background-color: #4caf50;
-  }
-  
-  .feature-button[style*="red"] {
-    background-color: #ff6b6b;
-  }
-  
-  .feature-button:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
-  } */
-  
-  /* Hover effects */
-  /* .feature-button[style*="green"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  .feature-button[style*="red"]:hover {
-    background-color: #d9534f;
-  } */
-  
-  /* controls.css */
-
-  /* For a dark theme background */
-
-.controls-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.relay-control {
+  background-color: #f8f9fa;
   padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f4f6f8;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-family: Arial, sans-serif;
-}
-
-.controls-title {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 500px;
 }
 
-.controls-feature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.relay-control h1 {
+  font-size: 2em;
   margin-bottom: 20px;
-  width: 100%;
+  color: #333;
+  font-weight: bold;
 }
 
-.feature-title {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.feature-button {
-  padding: 12px 20px;
-  font-size: 1rem;
+.relay-control button {
+  background-color: #4CAF50;
   color: white;
+  font-size: 1.2em;
   border: none;
   border-radius: 5px;
+  padding: 15px 25px;
+  margin: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
   width: 200px;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.feature-button:hover {
-  transform: scale(1.05);
+.relay-control button:hover {
+  background-color: #45a049;
 }
 
-.feature-button:active {
-  transform: scale(1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+.relay-control button:active {
+  background-color: #388e3c;
 }
 
-.feature-button {
-  background-color: #d9534f; /* Default red background */
+.relay-control button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(72, 180, 97, 0.7);
 }
 
-.feature-button[data-on="true"] {
-  background-color: #5cb85c; /* Green when on */
+.relay-control button.off {
+  background-color: #f44336;
+}
+
+.relay-control button.off:hover {
+  background-color: #e53935;
+}
+
+.relay-control button.off:active {
+  background-color: #d32f2f;
 }
